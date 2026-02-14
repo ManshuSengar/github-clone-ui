@@ -1,83 +1,63 @@
-# GitHub Profile Page – UptimeAI Assignment
+# GitHub Profile Viewer
 
-A pixel-perfect GitHub profile page clone built with **React JS** and plain **CSS** — fully responsive, with real GitHub API integration.
-
----
+A React application that replicates GitHub's profile page design with real-time data fetching.
 
 ## Features
 
-- ✅ Real GitHub API — fetches user profile from `api.github.com/users/shreeramk`
-- ✅ Contribution Heatmap — interactive 52-week graph with tooltips
-- ✅ Pinned Repositories — 6-card grid layout
-- ✅ Working Tabs — Overview, Repositories, Projects, Packages, Stars
-- ✅ Repository Search & Filter — by name, type, language
-- ✅ Activity Feed — recent contribution timeline
-- ✅ Fully Responsive — mobile, tablet, desktop
-- ✅ Plain CSS — zero CSS framework
-
----
+- ✅ Built with React JS
+- ✅ Styled with plain CSS
+- ✅ React Router for navigation
+- ✅ Contribution heatmap graph
+- ✅ GitHub REST API integration
+- ✅ Mock data fallback support
+- ✅ Fully responsive design
+- ✅ GitHub-style UI with hover effects
+- ✅ Interactive tabs (Overview, Repositories, Projects, Packages, Stars)
+- ✅ Repository search and filter
 
 ## Project Structure
 
 ```
 src/
-├── App.js                   # Root component, fetches user data
-├── styles/
-│   └── global.css           # All styles
-└── components/
-    ├── Header.js            # Top nav bar
-    ├── Sidebar.js           # Left panel (avatar, bio, orgs)
-    ├── MainContent.js       # Tabs + routing
-    ├── PinnedRepos.js       # Pinned repos grid
-    ├── ContributionGraph.js # 52-week heatmap
-    └── RepoTabContent.js    # Repos tab with search/filter
+  components/
+    Header.js
+    Sidebar.js
+    MainContent.js
+    ContributionGraph.js
+    PinnedRepos.js
+    RepoTabContent.js
+  styles/
+    global.css
+  App.js
+  index.js
 ```
 
----
+## Routes
 
-## Local Development
+- `/` - Full GitHub-like profile page
+- `/repositories` - Repositories tab with search and filter
+- `/projects` - Projects placeholder page
+- `/packages` - Packages placeholder page
+
+## Installation
 
 ```bash
 npm install
+```
+
+## Development
+
+```bash
 npm start
 ```
 
----
-
-## Deploy to Vercel
-
-### Option 1 — Vercel CLI
-
-```bash
-npm install -g vercel
-vercel login
-vercel
-```
-Follow the prompts. Vercel auto-detects Create React App settings.
-
-### Option 2 — GitHub + Vercel Dashboard
-
-1. Push code to GitHub
-2. Go to https://vercel.com/new
-3. Import your repository
-4. Settings (auto-detected):
-   - Framework: Create React App
-   - Build Command: `npm run build`
-   - Output Directory: `build`
-5. Click Deploy
-
-### Option 3 — Direct Build Deploy
+## Build
 
 ```bash
 npm run build
-vercel --prod ./build
 ```
 
----
+## APIs Used
 
-## GitHub Token (optional, for higher rate limits)
-
-Create `.env.local`:
-```
-REACT_APP_GITHUB_TOKEN=your_token_here
-```
+- GitHub User API: `https://api.github.com/users/{username}`
+- Contributions: Generated mock data (GitHub contribution API requires authentication)
